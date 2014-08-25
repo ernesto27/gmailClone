@@ -10,6 +10,7 @@ var App = {
 };
 
 App.Models.Mail = Backbone.Model.extend({
+	url: 'mail',
 	defaults:{
 		subject: null,
 		body: null,

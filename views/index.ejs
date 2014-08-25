@@ -1,62 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<style>
-		.left-sidebar{
-			background: rgba(209, 209, 209, 0.2);
-			height: 600px;
-		}
-
-		.main-content{
-			background: rgba(0, 0, 0, 0.2);
-			height: 600px;
-			padding-left: 0;
-			padding-right: 0;
-		}
-	</style>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>     
+	<meta charset="UTF-8">     
 	<title>Document</title>
+
+	<link rel="stylesheet"href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
 	<div class="">
 		<h2>Site title</h2>
+		<div class="alert alert-success" role="alert" id="success-message" style="display:none"> 
+			<p style="padding-left: 40%; margin-bottom:0;"><b>El mensaje se envio correctamente</b></p>
+		</div>
 
 		<div class="row">
-			<div class="col-md-3 left-sidebar">
-				<ul>
-					<li>todo</li>
-					<li>todo</li>
-					<li>todo</li>
-					<li>todo</li>
-				</ul>
+			<div class="col-md-2 sidebar-left">			
 			</div>
 
-			<div class="col-md-9 main-content">
-				<!--
-				<ul class="list-group">
-				 	<li class="list-group-item">Cras justo odio</li>
-				  	<li class="list-group-item">Dapibus ac facilisis in</li>
-				  	<li class="list-group-item">Morbi leo risus</li>
-				  	<li class="list-group-item">Porta ac consectetur ac</li>
-				  	<li class="list-group-item">Vestibulum at eros</li>
-				</ul>
-				-->
-
+			<div class="col-md-10 main-content">
 			</div>
 
 		</div>
 	</div>
 
 
+	<!-- TEMPORAL TPLS -->
+	<script type="text/template" id="sidebar-left">
+		<a class="btn btn-danger" id="add-mail" href="#mail/new">Redactar</a>
+			<ul>
+				<li>todo</li>
+				<li>todo</li>
+				<li>todo</li>
+				<li>todo2</li>
+			</ul>
+	</script>
+
+	<!-- NEW EMAIL TPL -->
+	<script type="text/template" id="new-email-tpl">
+		<div class="panel panel-primary" id="wrap-new-email">
+		 	<div class="panel-heading">Mensaje nuevo</div>
+		  	<div class="panel-body">
+		    	<form role="form" id="form-new-email">
+				 	<div class="form-group">
+				    	<input type="text" class="form-control" id="destinatario-email" placeholder="Destinatario">
+				  	</div>
+
+				  	<div class="form-group">
+				    	<input type="text" class="form-control" id="subject-email" placeholder="Asunto">
+				  	</div>
+
+				  	<div class="form-group">
+				  		<textarea name="" id="body-email"  rows="10"></textarea>
+				  	</div>
+		  	</div>
+
+		  	<div class="panel-footer" style="margin-top: -19px;">
+		  		<button type="submit" class="btn btn-primary" id="btn-new-email">Enviar</button>
+		  	</div>
+
+		  	</form>
+		</div>
+	</script>
+
+
 	<script type="text/javascript" src="js/libs/jquery.js"></script>
 	<script type="text/javascript" src="js/libs/underscore.js"></script>
 	<script type="text/javascript" src="js/libs/backbone.js"></script>
+	<script type="text/javascript" src="js/libs/moment.min.js"></script>
 	
 	<script src="/js/models/mail.js"></script>
 	<script src="/js/collections/mail.js"></script>
 	<script src="/js/views/mail.js"></script>
+	<script src="/js/views/layout.js"></script>
 
 	<script src="/js/main.js"></script>
 	

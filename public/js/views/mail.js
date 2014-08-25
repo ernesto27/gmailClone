@@ -2,7 +2,7 @@ App.Views.Mail = Backbone.View.extend({
 	tagName: 'li',
 	className: 'list-group-item',
 
-	template: _.template("{{ subject }}"),
+	template: _.template("{{ subject }} <div class='pull-right'>{{ moment(createdAt).calendar() }}</div>"),
 
 	render: function(){
 		var html = this.template(this.model.toJSON());
